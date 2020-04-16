@@ -1,0 +1,65 @@
+.padre{
+    display:flex;
+    flex-direction:row;
+    justify-content: space-around; /* EJE PRINCIPAL*/
+    align-items: center; /* EJE TRANSVERSAL */
+    height:200px;
+}
+
+.hijo{
+    width:100px;
+    height:100px;
+    background:yellow;
+    border:1px solid black;
+}
+
+footer{
+    display:flex;
+    justify-content: space-around;
+}
+footer div{
+    width:30%;
+}
+footer div.rrss{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+footer div.rrss ul{
+    display:flex;
+    padding-left:0;
+    justify-content: space-around;
+}
+footer div.rrss ul li{
+    list-style: none;
+}
+footer div h4{
+    text-align:center;
+}
+footer div.contact form{
+    display:flex;
+    flex-direction: column;
+    width:80%;
+    align-items: center;
+    margin-left:10%;
+}
+footer div.contact form textarea{
+    width:80%;
+}
+footer div.copy{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+@media (max-width:800px){
+    footer{
+        flex-direction: column;
+        align-items: center;
+    }
+    footer div{
+        width:90%;
+        margin:10px;
+    }
+}

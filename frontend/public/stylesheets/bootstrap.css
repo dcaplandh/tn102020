@@ -1,0 +1,13 @@
+form.custom-form .form-group{
+    display:inline-block;
+}
+form button.btn-enviar{
+    background:#f5cdd6;
+    color:gray;
+    border:0px;
+}
+form button.btn-enviar:hover{
+    color: #fff;
+    background-color: gray;
+    border-color: 0px;
+}

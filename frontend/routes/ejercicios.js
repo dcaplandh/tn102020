@@ -29,5 +29,8 @@ router.get('/clase4/flexbox', function(req, res, next) {
 router.get('/clase4/bootstrap', function(req, res, next) {
   res.render('clase4/bootstrap');
 });
+router.get('/mercadoliebre', function(req, res, next) {
+  res.render('mercadoliebre');
+});
 
 module.exports = router;

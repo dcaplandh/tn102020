@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var mlController = require('../controllers/mlController');
 
 /* GET home page. */
 router.get('/clase1/ejemplo1', function(req, res, next) {
@@ -29,8 +30,6 @@ router.get('/clase4/flexbox', function(req, res, next) {
 router.get('/clase4/bootstrap', function(req, res, next) {
   res.render('clase4/bootstrap');
 });
-router.get('/mercadoliebre', function(req, res, next) {
-  res.render('mercadoliebre');
-});
-
+router.get('/mercadoliebre', mlController.verVista);
+router.get('/mercadoliebre/producto', mlController.verProducto);
 module.exports = router;

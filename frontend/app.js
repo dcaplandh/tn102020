@@ -4,10 +4,12 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var alerts = require('./middlewares/alerts');
+const session = require('express-session');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var ejerciciosRouter = require('./routes/ejercicios');
+var persistenciaRouter = require('./routes/persistencia');
 
 var app = express();
 
@@ -21,10 +23,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(alerts.alert);
+app.use(session({secret:"dh"}));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/frontend', ejerciciosRouter);
+app.use('/persistencia', persistenciaRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

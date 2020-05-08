@@ -2,19 +2,34 @@
 <html lang="en">
     <% 
     function buscarError(name){
+        console.log("buscarError");
         if(typeof errors != 'undefined'){
             let error = errors.filter(function(error){
                 return error.param == name;
             });
-            return error;
-        }else{
-            return [{
+            console.log(errors);
+            if(error.length == 0){
+                let error = [{
                 value: '',
                 msg: '',
                 param: '',
                 location: ''
             }
             ];
+            console.log(error);
+            return error;
+            }
+            return error;
+        }else{
+            let error = [{
+                value: '',
+                msg: '',
+                param: '',
+                location: ''
+            }
+            ];
+            console.log(error);
+            return error;
         }
     }
     

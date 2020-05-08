@@ -15,8 +15,12 @@
                 <a href="#">Ayuda</a>
             </div>
             <div class="menu-der col-sm-4 col-md-3 offset-md-5">
+                <% if(logueado){  %>
+                    <span>Hola <%= usuario %></span>
+                <% }else{  %>
                     <a href="#">Login</a>
                     <a href="#">Registro</a>
+                <% } %>
                 <a href="#">Ayuda</a>
             </div>
         </div>

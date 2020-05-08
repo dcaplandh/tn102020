@@ -32,4 +32,26 @@ router.get('/clase4/bootstrap', function(req, res, next) {
 });
 router.get('/mercadoliebre', mlController.verVista);
 router.get('/mercadoliebre/producto', mlController.verProducto);
+
+router.get('/formget',function(req,res){
+  res.render('formget');
+});
+router.post('/formpost',function(req,res){
+    let nombre = req.body.nombre;
+    //devuelvo por parametro de url
+    res.redirect('/frontend/gracias/'+nombre);
+    //devuelvo por querystring
+    res.redirect('/frontend/gracias?username='+nombre);
+});
+router.get('/gracias/params/:username',function(req,res){
+  res.render('gracias',{
+    usuario: req.params.username
+  });
+});
+router.get('/gracias/querystring',function(req,res){
+  res.render('gracias',{
+    usuario: req.query.username
+  });
+});
+
 module.exports = router;

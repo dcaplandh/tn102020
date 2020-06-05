@@ -47,6 +47,31 @@ router.get('/mostrar-algo',function(req,res,next){
         res.render('algo',{color:"white",mode:"dark"});
     }
     
+});
+
+router.get('/contador',function(req,res,next){
+    //arranca en cero 
+    let numero = 0;
+    //res.cookie('numero',numero);
+    req.session.numero = numero;
+    res.render('contador',{contador:numero});
+});
+router.get('/sumar1',function(req,res,next){
+    let numero = "";
+    if(typeof req.session.numero != 'undefined'){
+    //if(typeof req.cookies.numero != 'undefined'){
+        //numero = req.cookies.numero;
+        numero = req.session.numero;
+        console.log("si")
+    }else{
+        numero = 0;
+        console.log("else")
+    }
+    
+    numero++;
+    //res.cookie('numero',numero);
+    req.session.numero = numero;
+    res.render('contador',{contador:numero});
 })
 
 module.exports = router;

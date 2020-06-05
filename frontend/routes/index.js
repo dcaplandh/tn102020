@@ -6,4 +6,8 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+router.get('/jsfront1',function(req,res,next){
+  res.render('jsfront1');
+});
+
 module.exports = router;

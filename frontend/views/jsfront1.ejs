@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/javascripts/script.js"></script>
+<style>
+    *{
+        box-sizing: border-box;
+    }
+ #cajaRoja{
+     width:50px;
+     height:50px;
+     background:red;
+ }
+ .notificaciones{
+     display:flex;
+     flex-direction: column-reverse;
+     width:400px;
+     border:2px solid lightblue;
+ }
+ .notificacion{
+     padding:30px 15px;
+     width:100%;
+     height:30px;
+     background:lightcyan;
+     border-bottom:1px solid lightblue;
+ }
+ .tateti{
+     width:610px;
+     height:610px;
+     display:flex;
+     flex-wrap: wrap;
+ }
+ .tateti .caja{
+     width:200px;
+     height:200px;
+     font-size:150px;
+     color:blue;
+     display:flex;
+     justify-content: center;
+     align-items: center;
+ }
+ .caja1{
+     border-right:2px solid red;
+     border-bottom:2px solid red;
+ }
+ .caja5{
+     border:2px solid red;
+ }
+ .caja3{
+     border-left:2px solid red;
+     border-bottom:2px solid red;
+ }
+ .caja7{
+    border-right:2px solid red;
+     border-top:2px solid red;
+ }
+ .caja9{
+     border-left:2px solid red;
+     border-top:2px solid red;
+ }
+</style>
+<script>
+    console.log("Estoy en el navegador");
+</script>
+</head>
+<body>
+    <div id="cajaRoja" onclick="tocar()"></div>
+    <input type="text" class="nota" value="">
+    <button onclick="notificar()">Notificar</button>
+
+    <div class="notificaciones">
+        <div class='notificacion'>
+            <div onclick='cerrar(this)'>X</div>
+            TEXTO
+        </div>
+        <div class='notificacion'>
+            <div onclick='cerrar(this)'>X</div>
+            TEXTO
+        </div>
+    </div>
+    <div class="tateti">
+        <div onclick="elegir(this)" class="caja caja1"></div>
+        <div onclick="elegir(this)" class="caja caja2"></div>
+        <div onclick="elegir(this)" class="caja caja3"></div>
+        <div onclick="elegir(this)" class="caja caja4"></div>
+        <div onclick="elegir(this)" class="caja caja5"></div>
+        <div onclick="elegir(this)" class="caja caja6"></div>
+        <div onclick="elegir(this)" class="caja caja7"></div>
+        <div onclick="elegir(this)" class="caja caja8"></div>
+        <div onclick="elegir(this)" class="caja caja9"></div>
+    </div>
+    
+</body>
+</html>

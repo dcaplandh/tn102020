@@ -12,12 +12,15 @@ router.get('/', function(req, res, next) {
 
 router.get('/register',usersController.showRegisterForm);
 
-router.post('/register',[
-  check('name').isLength({min:2}).withMessage('El nombre debe tener al menos 2 letras.'),
-  check('email').isEmail().withMessage('El email es inválido.'),
-  check('password').isLength({min:6}),
-  check('name').isLowercase()
-],usersController.registerForm);
+router.post('/register',
+  [
+    check('name').isLength({min:2}).withMessage('El nombre debe tener al menos 2 letras.'),
+    check('email').isEmail().withMessage('El email es inválido.'),
+    check('password').isLength({min:6}),
+    check('name').isLowercase()
+  ],
+  usersController.registerForm);
+
 router.get('/login',usersController.showLoginForm);
 router.post('/login',usersController.loginForm);
 
